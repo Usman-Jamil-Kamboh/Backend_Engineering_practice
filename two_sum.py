@@ -1,9 +1,23 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        for i in range( len(nums)):
-            for j in range (i+1,len(nums)):
-                if nums[i] + nums[j] == target:
-                    return [i,j]
-        return[]
+        seen = {}
+
+        for i in range(len(nums)):
+            second_num = target - nums[i]
+
+            if second_num in seen :
+                return [i , seen[second_num]]
+
+            
+            seen[nums[i]] = i 
+
+
+
+        
+
+       
+
+
+
 
 
